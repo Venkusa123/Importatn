@@ -8,6 +8,7 @@ import { SecondCompComponent } from "./second-comp/second-comp.component";
 const routes:Routes=[
     {
         path:'billing',
+        // component:BillinngComponent//optional this line,if u want all these elow should be rendenred afer this page it is ok,else it is not necessary
         children:[
         {
             path:'first',

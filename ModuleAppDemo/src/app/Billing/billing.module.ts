@@ -1,6 +1,7 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BillingWrapperModule } from './billing-wrapper.module';
 import { BillinngComponent } from './billing.component';
 import { FirstCompComponent } from './first-comp/first-comp.component';
@@ -14,7 +15,7 @@ import { SecondCompComponent } from './second-comp/second-comp.component';
     NotFoundComponent,BillinngComponent
   ],
   imports: [
-    CommonModule,BillingWrapperModule
+    CommonModule,BillingWrapperModule,ReactiveFormsModule,FormsModule
   ]
 })
 export class BillingModule { }
