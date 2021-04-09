@@ -7,6 +7,8 @@ import { BillinngComponent } from './billing.component';
 import { FirstCompComponent } from './first-comp/first-comp.component';
 import { NotFoundComponent } from './not-found/notfound.component';
 import { SecondCompComponent } from './second-comp/second-comp.component';
+import {HttpClientModule} from '@angular/common/http';
+import { FirstService } from './first-comp/first.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { SecondCompComponent } from './second-comp/second-comp.component';
     NotFoundComponent,BillinngComponent
   ],
   imports: [
-    CommonModule,BillingWrapperModule,ReactiveFormsModule,FormsModule
-  ]
+    CommonModule,BillingWrapperModule,ReactiveFormsModule,FormsModule,HttpClientModule
+  ],
+  providers:[FirstService]
 })
 export class BillingModule { }

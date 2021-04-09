@@ -22,7 +22,10 @@
             <input type="checkbox" id="checkId" formControlName="tandc">
         </div>
         <div style="margin-top: 10%;">
-            <button class="btn-md btn-primary formsubmitClass" (click)="firstFormSubmitted()">Submit First Form</button>
+            <button class="btn-md btn-primary" id="formsubmitClass" (click)="firstFormSubmitted()">Submit First Form</button>
         </div>
     </form>
+</div>
+<div>
+    <button class="btn-md btn-submit" (click)="getCountries()">Get Country Details</button>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FirstService } from './first.service';
 
 @Component({
   selector: 'app-first-comp',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FirstCompComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private firstService:FirstService) { }
   firstForm:FormGroup;
   groupList:any=[{
     'subject':'Computer Science','value':'Computer Science'
@@ -21,6 +22,7 @@ export class FirstCompComponent implements OnInit {
   },{
     'subject':'Sales Force','value':'Sales Force'
   }]
+  countryName:any='';
   ngOnInit() {
     this.firstForm = this.fb.group({
       name:['',Validators.required],
@@ -33,13 +35,19 @@ export class FirstCompComponent implements OnInit {
     if(this.firstForm.valid){
       console.log("First Form is valid \n");
       console.log(this.firstForm.value);
-      console.log(this.firstForm.valid);
-      
-      
+      console.log(this.firstForm.valid);      
     }else{
       console.log("First Form is invalid");
       
       console.log(this.firstForm.valid);
     }
+  }
+  getCountries(){
+    this.firstService.getCountryNames().subscribe((succ)=>{
+      console.log(succ);
+      this.countryName = succ[0].name;
+    },(err)=>{
+      console.log(err);
+    })
   }
 }
